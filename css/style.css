@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+h1 {
+    background-color: #227c9d;
+    margin: 0 auto;
+    padding: 25px;
+    color: white;
+}
+
+ol {margin-top: 50px;}
+
+ol li {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+ol li a {
+    text-decoration: none;
+    color: black;
+}
+
+ol li a:hover {color: #227c9d;}
