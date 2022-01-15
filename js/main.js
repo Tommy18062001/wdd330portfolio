@@ -1,8 +1,20 @@
 const ourList = document.getElementsByTagName("ol")[0];
 const links = [
     {
-      label: "Week1 notes",
-      url: "week1/index.html"
+      label: "Week1 Story Editor",
+      url: "week1/story_editor.html",
+    },
+    {
+      label: "Week2 Chapter 2: Programming basics",
+      url: "week2/index.html",
+    },
+    {
+      label: "Week2 Chapter 3: Array, logics, loops",
+      url: "week2/array.html",
+    },
+    {
+      label: "Week2 Team Activity",
+      url: "teamweek2/index.html",
     }
   ]
 
