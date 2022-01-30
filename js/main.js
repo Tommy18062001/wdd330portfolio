@@ -23,6 +23,10 @@ const links = [
     {
       label: "Week3 Team Activity: Array Cardio 2",
       url: "teamweek3/arraycardio2.html",
+    },
+    {
+      label: "Week4 Team Activity: Tic Tac Toe",
+      url: "teamweek4/index.html",
     }
   ]
 
