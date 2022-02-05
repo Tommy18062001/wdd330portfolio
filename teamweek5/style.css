@@ -15,10 +15,10 @@ img {
 img:hover {box-shadow: 1px 1px 10px 1px black;}
 
 h1 {
-text-align: center;
-background-color: #379e3c;
-padding: 20px 0;
-color: white;
+    text-align: center;
+    background-color: #379e3c;
+    padding: 20px 0;
+    color: white;
 }
 
 ul {
@@ -27,12 +27,12 @@ ul {
 }
 
 li {
-display: grid;
-grid-template-columns: 1fr 1fr;
-grid-gap: 10px;
-list-style-type: none;
-margin-top: 50px;
-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    list-style-type: none;
+    margin-top: 50px;
+    width: 100%;
 }
 
 h2 {
