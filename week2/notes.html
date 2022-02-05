@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        font-size: 16px;
+      }
+
+      h1 {
+        background-color: #227c9d;
+        margin: 0 auto;
+        padding: 25px;
+        color: white;
+      }
+
+      ul {
+        width: 70%;
+        margin-left: 50px;
+      }
+
+      ul li {
+        font-size: 1.3rem;
+        margin-bottom: 1.3rem;
+      }
+
+      h2 {
+        color: #227c9d;
+        margin-left: 50px;
+        margin-top: 50px;
+      }
+
+      h3 {
+        margin-left: 50px;
+      }
+
+      footer {
+        background-color: #227c9d;
+        text-align: center;
+        font-size: 1.3rem;
+        margin-top: 50px;
+        padding: 15px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Readings and Notes</h1>
+
+    <h2>Chapter 2: Programming Basics</h2>
+
+    <ul>
+      <li>
+        JavaScript is a series of statement. And each one ends with a semi-colon
+      </li>
+
+      <li>
+        A block is a series of statement collected inside curly braces. No
+        semi-colon at the end
+      </li>
+
+      <li>
+        JavaScript interpreters using an ASI (Automatic Semi-colon Insertion) to
+        place a semi-colon at the end of each line for us.
+      </li>
+
+      <li>
+        Important Note: Because it can cause an error, it’s considered best
+        practice to write each statement on a new line, terminated by a
+        semi-colon
+      </li>
+
+      <li>
+        JS has six types of value: string, number, Boolean, null, undefined,
+        objects
+      </li>
+
+      <li>Variable’s name: Camel Case or Underscore principle</li>
+
+      <li>
+        Trim(): it’s used to remove whitespace from the beginning and end of a
+        string
+      </li>
+
+      <li>
+        Octal and Hexadecimal numbers: <br />
+        Start with 0x, it is considered to be Hexadecimal <br />
+        Start with 0, normally it’s Octal
+      </li>
+
+      <li>
+        Infinity: It’s an error message in JavaScript to confirm that the number
+        is too big to deal with
+      </li>
+      <li>
+        Type Coercion can be confusing. We need to always verify the type of
+        value we are using before doing any operation
+      </li>
+
+      <li>
+        undefined is the value given to variables that have not been assigned a
+        value.
+      </li>
+      <li>
+        Null in JavaScript can be thought of a placeholder: “there should be an
+        value here, but there isn’t at the moment.”
+      </li>
+      <li>
+        Bitwise operator: Not ( ~ ), And ( & ), Or ( | ), XOR (exclusive OR) ( ^
+        ), Shift operator ( << >> )
+      </li>
+    </ul>
+    <h2>Chapter 3: Arrays, Logic, Loops</h2>
+
+    <h3>Array properties and method reminder</h3>
+
+    <ul>
+      <li>Pop: remove the last item</li>
+      <li>Shift: remove the first item</li>
+      <li>Push: add an item to the end</li>
+      <li>Unshift: add an item at the beginning</li>
+      <li>Concat: used to merge an array with one or more arrays</li>
+      <li>Join: Turn an array into a string</li>
+      <li>Slice: It creates a subarray</li>
+      <li>Splice: remove items from an array and replace it with new items</li>
+      <li>
+        indexOf: find if an item is inside an array. Return -1 if that is the
+        case
+      </li>
+    </ul>
+
+    <h3>The use of Ternary Operation (shorthand)</h3>
+    <ul>
+      <li>Example: condition ? (If true) : (If false)</li>
+    </ul>
+
+    <h2>Chapter 4: Functions</h2>
+    <h3>3 ways to declare a function</h3>
+
+    <ul>
+      <li>Functions declaration</li>
+      <li>Functions expressions</li>
+      <li>Function() constructor</li>
+    </ul>
+
+    <h3>Scope: It refers to where a variable is visible and accessible</h3>
+    <ul>
+      <li>
+        Global scope (any variable declared outside a function has this scope)
+      </li>
+      <li>Local scope (declared inside function using the var statement)</li>
+    </ul>
+    <h3>
+      Callback function: it’s a function that is passed as an argument to
+      another function
+    </h3>
+    <h3>Array iterators:</h3>
+    <ul>
+      <li>forEach()</li>
+      <li>map()</li>
+      <li>reduce()</li>
+      <li>filter()</li>
+    </ul>
+
+    <footer>&copy;Copyright | Tommy Sylver</footer>
+  </body>
+</html>

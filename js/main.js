@@ -5,6 +5,10 @@ const links = [
       url: "week1/story_editor.html",
     },
     {
+      label: "Week1 Notes",
+      url: "week1/notes.html",
+    },
+    {
       label: "Week2 Chapter 2: Programming basics",
       url: "week2/index.html",
     },
@@ -27,6 +31,10 @@ const links = [
     {
       label: "Week4 Team Activity: Tic Tac Toe",
       url: "teamweek4/index.html",
+    },
+    {
+      label: "Week5 Team Activity: Great Hikes",
+      url: "teamweek5/index.html",
     }
   ]
 

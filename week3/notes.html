@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        font-size: 16px;
+      }
+
+      h1 {
+        background-color: #227c9d;
+        margin: 0 auto;
+        padding: 25px;
+        color: white;
+      }
+
+      ul, p {
+        width: 70%;
+        margin-left: 50px;
+      }
+
+      ul li, p {
+        font-size: 1.3rem;
+        margin-bottom: 1.3rem;
+      }
+
+      h2 {
+        color: #227c9d;
+        margin-left: 50px;
+        margin-top: 50px;
+      }
+
+      h3 {
+        margin-left: 50px;
+      }
+
+      footer {
+        background-color: #227c9d;
+        text-align: center;
+        font-size: 1.3rem;
+        margin-top: 50px;
+        padding: 15px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Readings and Notes</h1>
+
+    <h2>Object method ‘This’</h2>
+<p>It is a way for an object method to access the information stored in the object. The value of this is evaluated during the run-time, depending on the context.
+</p>
+<h2>Chapter 5: Objects</h2>
+<h3>An object in JS is a self-contained set of related values and functions. We can think about it as a dictionary. 
+    </h3>
+
+    <ul>
+        <li>It can inherit properties from other objects.</li>
+        <li>An object can contain other objects (Nested objects)</li>
+        <li>Arrays and functions are one of the main examples of built-in objects</li>
+        <li>Objects are mutable</li>
+    </ul>
+    
+<h3>Object literal: It’s an object that is created directly in the language by wrapping all its properties and methods in curly braces {}
+    There is two ways to create it: </h3>
+
+<ul>
+    <li>Object literal notation (recommended)</li>
+    <li>Construction function</li>
+</ul>
+
+<h3>JSON (JavaScript Object Notation): It is a popular lightweight data-storage format that is used for data serialization and configuration.  JSON is a string representation of the object literal notation that we have just seen
+    Others objects: </h3>
+    <ul>
+        <li>Math Object</li>
+        <li>Date Object </li>
+        <li>RegEx Object (to study more) is a pattern that can be used to search or modify strings</li>
+    </ul>
+
+<h3>RegEx Special Character:</h3>
+<ul>
+    <li>. matches any character </li>
+    <li>\w matches any word character, and is equivalent to [A-Za-z0-9_] </li>
+    <li>\W matches any non-word character, and is equivalent to [^A-Za-z0-9_] </li>
+        <li>\d matches any digit character, and is equivalent to [0-9] </li>
+            <li>\D matches any non-digit character, and is equivalent to [^0-9] </li>
+                <li>\s matches any whitespace character, and is equivalent to [ \t\r\n\f] </li>
+                    <li>\S matches any non-whitespace character, and is equivalent to [^ \t\r\n\f]</li>
+</ul>
+
+
+
+<h3>RegEx Modifiers:</h3>
+<ul>
+    <li>? matches zero or one occurrence of the pattern </li>
+        <li>* matches zero or more occurrences of the pattern </li>
+            <li>+ matches one or more occurrences of the pattern</li>
+                <li>{n} matches n occurrences of the pattern</li>
+                    <li>{n,} matches at least n occurrences of the pattern </li>
+                        <li>{,m} matches at most m occurrences of the pattern </li>
+                            <li>{n,m} matches at least n and at most m occurrences of the pattern </li>
+                                <li>^ specifies that the pattern must come at the beginning </li>
+                                    <li>$ specifies that the pattern must come at the end</li>
+</ul>
+
+<h2>Chapter 6: The Documet Model Objects DOM</h2>
+<ul>
+    <li>DOM allows you to access elements of a web page and enable interaction with the page. It represents an HTML document as a network of connected nodes that form a tree-like structure </li>
+        <li>DOM API provides several methods to access any element which will return a node object or a node list. The same way, it also has setter methods that can be used to view, update or even remove content </li>
+        
+            <li>CreateTextNode: It creates a text node that can be append to a parent node like paragraph, …
+        </li>
+</ul>
+
+<h2>Chapter 7: Events</h2>
+<p>Every time a user interacts with a web page, such as clicking on a link, pressing a key, or moving a mouse, an event occurs that our program can detect and then respond to.
+</p>
+<h3>Event listeners</h3>
+ <ul>
+     <li>It’s a like setting a notification that will respond appropriately when a specific even happens <br>
+        Example: document.body.addEventListener(“click”, doSomething);</li>
+        <li>Old Event Handlers: Another method of dealing with events. Using event handler that all node objects have. <br>
+            Example: document.onclick = function (){ console.log(“You clicked!”); }
+            </li>
+ </ul>
+
+
+
+<h3>Event Objects</h3>
+<p>Every time an event occurs, the callback function is called. This function is automatically passed an event object as a parameter that contains information about the event.
+</p>
+<ul>
+    <li>
+    event.type: returns the type of event that occurred, such as click</li>
+    <li>event.target: returns a reference to the node that fired the event.</li>
+        <li>event.screenX and event.screenY: show the number of pixels from the left and top of the screen respectively where the event took place.</li>
+            <li>event.which:  returns which mouse button or key was pressed
+</li></ul>
+
+<h3>Type of Events</h3>
+<p>There are several type of events but here are one of the most common:</p>
+<ul>
+    <li>
+        Mouse Events</li>
+	<li>Keyboard Events</li>
+	<li>Touch Events
+    </li>
+    
+</ul>
+
+<h3>Event propagation</h3>
+<p>It is the order that the events fire on each element. There are two forms of event propagation: 
+</p>	
+<ul>
+    <li>Bubbling (default behavior): is when the event fires on the element clicked on first, then bubbles up the document tree, firing an event on each parent element until it reaches the root node.</li>
+        <li>Capturing: starts by firing an event on the root element, then propagates downwards, firing an event on each child element until it reaches the target element that was clicked on
+        </li>
+</ul>
+
+<h3>Stopping the Bubbling Phase</h3>
+<p>It can be stopped from occurring by adding the event.stopPropagation() method into the callback function.
+</p>
+
+<h3>Event delegation</h3>
+<p>can be used to attach an event listener to a parent element in order to capture events that happen to its child element
+</p>
+<p>preventDefault(): It prevents the default behavior of an elements
+</p>
+
+    <footer>&copy;Copyright | Tommy Sylver</footer>
+  </body>
+</html>
