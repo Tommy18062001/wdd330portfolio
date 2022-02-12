@@ -35,6 +35,10 @@ const links = [
     {
       label: "Week5 Team Activity: Great Hikes",
       url: "teamweek5/index.html",
+    },
+    {
+      label: "Challenge One: To Do App",
+      url: "todo/index.html",
     }
   ]
 
