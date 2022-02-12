@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 }
 
 header {
@@ -68,6 +69,8 @@ input:focus {outline: none;}
     margin-left: 5px;
     border: 1px solid rgb(102, 98, 98);
     cursor: pointer;
+    background-color: #227c9d;
+    color: white;
 }
 
 input[type= "checkbox"]{
@@ -81,8 +84,15 @@ li p {
     width: 90%;
 }
 
-button{
+button {
     cursor: pointer;
+}
+
+.delete {
+    background-color: #d11a2a;
+    color: white;
+    border: none;
+    font-size: 1.3rem;
 }
 
 .filter-action {
@@ -105,6 +115,8 @@ button{
 }
 
 .filter-action button.filter {
-    background-color: rgba(107, 107, 243, 0.541);
+    background-color: #227c9d;
+    color: white;
 }
+
 
