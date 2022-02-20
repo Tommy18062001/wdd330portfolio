@@ -21,12 +21,20 @@ const links = [
       url: "Teamweek2/index.html",
     },
     {
+      label: "Week2 Notes",
+      url: "week2/notes.html",
+    },
+    {
       label: "Week3 Team Activity: Array Cardio 1",
       url: "teamweek3/arraycardio1.html",
     },
     {
       label: "Week3 Team Activity: Array Cardio 2",
       url: "teamweek3/arraycardio2.html",
+    },
+    {
+      label: "Week3: Notes",
+      url: "week3/notes.html",
     },
     {
       label: "Week4 Team Activity: Tic Tac Toe",
@@ -40,6 +48,16 @@ const links = [
       label: "Challenge One: To Do App",
       url: "todo/index.html",
     }
+    ,
+    {
+      label: "Week 07: Notes",
+      url: "week7/notes.html",
+    },
+    {
+      label: "Week 07 Activity: Comments",
+      url: "teamweek7/index.html",
+    }
+
   ]
 
 

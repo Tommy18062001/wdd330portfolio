@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 7</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        font-size: 16px;
+      }
+
+      h1 {
+        background-color: #227c9d;
+        margin: 0 auto;
+        padding: 25px;
+        color: white;
+      }
+
+      ul,
+      p {
+        width: 70%;
+        margin-left: 50px;
+      }
+
+      ul li,
+      p {
+        font-size: 1.1rem;
+        margin-bottom: 1.3rem;
+      }
+
+      h2 {
+        color: #227c9d;
+        margin-left: 50px;
+        margin-top: 50px;
+      }
+
+      h3 {
+        margin-left: 50px;
+      }
+
+      footer {
+        background-color: #227c9d;
+        text-align: center;
+        font-size: 1.3rem;
+        margin-top: 50px;
+        padding: 15px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>W07: Readings and Notes</h1>
+    <h2>Chapter 11: Further Function</h2>
+    <p>
+      JavaScript has always supported functional-style programming due to
+      functions being first-class objects. This facilitates some of JavaScript’s
+      most interesting techniques—such as callbacks and closures—that can be
+      used to create cleaner code that is flexible and powerful.
+    </p>
+    <h3>Functions that Return Functions:</h3>
+    <p>
+      It can take a function as its argument. This is the essence of functional
+      programming: it allows generic higher-order functions to be used to return
+      more specific functions based on particular parameters.
+    </p>
+    <h3>Function Properties and Methods:</h3>
+    <p>Like other objects, functions has its own method and properties.</p>
+    <ul>
+      <li>
+        Call(): allows a function to be called by an object that is provided as
+        the first argument
+      </li>
+      <li>
+        Apply: works in the same way, except the arguments of the function are
+        provided as an array, even if there is only one argument
+      </li>
+    </ul>
+    <h3>Custom Properties</h3>
+    <p>
+      There is nothing to stop from you adding your own properties to functions.
+      A useful feature of this is that it provides result caching, or
+      memoization. <br />
+      Cache object: it stores the results after a function being called.
+    </p>
+
+    <h3>Callbacks</h3>
+    <p>
+      Callbacks facilitate event-driven asynchronous programming. JavaScript is
+      a single-threaded environment, which means that only one piece of code
+      will ever be processed at a time.
+    </p>
+    <p>Example:</p>
+    <p>
+      function wait(message, callback, seconds) <br />
+      { setTimeout(callback,seconds * 1000) <br />
+      ; console.log(message); }
+    </p>
+
+    <h3>Generalized Functions:</h3>
+    <p>
+      Callbacks can be used to build more generalized functions. Instead of
+      having lots of specific functions, one function can be written that
+      accepts a callback.
+    </p>
+
+    <h3>Closures</h3>
+    <p>
+      It is reference to a free variable that was created inside the scope of
+      another function, but is then kept alive and used in another part of the
+      program. They’re one of JavaScript’s most powerful features, but they can
+      be difficult to get your head round initially.
+    </p>
+    <p>Example:</p>
+    <p>
+      function closure() {<br />
+      var a = 1.8; <br />
+      var b = 32; <br />
+      return function(c){ <br />
+      return c * a + b; <br />
+      } }
+    </p>
+
+    <h3>Immediately Invoked Function Expression (IIFE):</h3>
+    <p>
+      It is a function that, as the name suggests, is invoked as soon as it’s
+      defined. We can do this by placing parentheses at the end of the function
+      definition (remember that we use parentheses to invoke a function)
+    </p>
+    <p>
+      Example: (function(){ var temp = “world”; console.log(“Hello ” + temp);
+      }())
+    </p>
+
+    <h3>Mimicking Block Scope:</h3>
+    <p>
+      A block scope is known as a variable has scope inside a code block. It’s
+      doesn’t happen in JS. The solution is to use for block inside IIFE
+    </p>
+
+    <h3>Safe Use of Strict Mode:</h3>
+    <p>
+      For that, the recommended way to use strict mode is to place all your code
+      inside an IIFE
+    </p>
+    <h3>Recursive function:</h3>
+    <p>A function that invokes itself until a certain condition is met</p>
+    <h3>Currying:</h3>
+    <p>it is a process that involves the partial application of functions.</p>
+    <p>Example:</p>
+    <p>
+      function multiplier(x,y) { <br />
+      if (y === undefined) { <br />
+      return function(z) { <br />
+      return x * z; } <br />
+      } else { return x * y; } }
+    </p>
+
+    <h2>Chapter 13: AJAX</h2>
+    <p>
+      Ajax is a technique that allows web pages to communicate asynchronously
+      with a server and dynamically updates web pages without reloading. It
+      means that JavaScript can be used to request resources from a server on
+      behalf of the client.
+    </p>
+    <h3>Clients and Servers:</h3>
+    <p>
+      The web of computers known as the Internet can be separated into two
+      parts: clients and servers.
+    </p>
+    <p>
+      A client such as a web browser, will request a resource (usually a web
+      page) from a server, which processes the request and sends back a response
+      to the client.
+    </p>
+    <p>CORS (Cross-origin resource sharing)</p>
+
+    <h3>A Brief History of Ajax:</h3>
+    <p>
+      Ajax was a neat acronym that referred to the different parts of the
+      process being used: Asynchronous JavaScript and XML. Its use really
+      started to take off. Now users could see new content on web pages without
+      having to refresh the page. Shopping baskets could be updated in the
+      background, partial page content could be loaded seamlessly, and photo
+      galleries could dynamically load images.
+    </p>
+    <h3>The XMLHttpRequest Object:</h3>
+    <p>
+      XMLHttpRequest is a constructor function that returns an object with
+      methods for sending and receiving data
+    </p>
+    <p>
+      To create a new XMLHttpRequest object, use the following code: <br />
+      var xhr = new XMLHttpRequest();
+    </p>
+    <p>
+      It has a property called readyState that returns an integer value that
+      corresponds to the status of the request.
+    </p>
+    <ul>
+      <li>0 (UNSENT) the open() method has yet to be called</li>
+      <li>
+        1 (OPENED) after the open() method, but before the send() method has
+        been called
+      </li>
+      <li>
+        2 (HEADERS_RECEIVED) the send() method has been called and the HTTP
+        headers and status code have been received
+      </li>
+      <li>3 (LOADING) the response is in the process of being received</li>
+      <li>4 (DONE) the full response has been received</li>
+    </ul>
+
+    <p>
+      Open(): This method sets up the request and takes three parameters (HTTP
+      Verb like GET and POST, URL address, Asynchronously sent or not TRUE or
+      FALSE) <br />
+      Example xhr.open(“GET”, “path/to/resource”, true);
+    </p>
+
+    <p>Warning: Avoid Synchronous Requests</p>
+    <p>
+      Send(): send the request. This methods accept any data <br />
+      Example xhr.send(“name=Superman”);
+    </p>
+    <ul>
+      <li>
+        The status property: it returns the HTTP status code like 200, 201, 204
+      </li>
+      <li>
+        The response property: it returns the response sent back from the
+        server. This can be text, HTML, JSON, a document, or a file.
+      </li>
+      <li>
+        The responseText property: It returns a string representation of the
+        response or null if nothing is returned
+      </li>
+      <li>
+        The responseXML property: returns a document object that can then be
+        parsed using the DOM methods
+      </li>
+      <li>
+        The responseType property: returns a string indicating the type of data
+        contained in the respons
+      </li>
+    </ul>
+
+    <p>
+      Warning: Watch Out for Cookies <br />Each Ajax request is still a full
+      HTTP request, so they will also download the cookies associated with that
+      request.
+    </p>
+
+    <h3>FormData:</h3>
+    <p>
+      One of the most useful additions to the XMLHttpRequest2 specification is
+      the FormData interface.
+    </p>
+    <p>
+      The FormData interface interface really comes into its own when a form
+      contains files to upload. This was a notoriously difficult task in the
+      past, often requiring the use of Flash or another third-party browser
+      plugin to handle the upload process. The FormData instance will
+      automatically create the necessary settings required and take care of all
+      the hard work if any file uploads are present in the form.
+    </p>
+
+    <h3>Ajax Timeouts:</h3>
+    <p>
+      Ajax requests can take different amounts of time for a response, depending
+      on the server to which the request is made. This is why it’s important to
+      ensure the request is made asynchronously, so that the browser avoids
+      being locked up while waiting for the response.
+    </p>
+    <p>
+      The XMLHttpRequest object has a timeout property for setting the amount of
+      time to wait for a response.
+    </p>
+    <h3>JSON With Padding:</h3>
+    <p>
+      JSONP or JSON with padding is a very common technique of transporting data
+      as it allows the same-origin policy to be bypassed without using CORS.
+    </p>
+    <p>
+      It wraps the response data in a JavaScript callback function that is
+      dynamically inserted the markup
+    </p>
+    <footer>&copy;Copyright | Tommy Sylver</footer>
+  </body>
+</html>
