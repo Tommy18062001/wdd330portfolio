@@ -3,7 +3,6 @@ class CommentModel {
       this.type = type
   }
 }
-
 class Comment {
   constructor(name, date, content, type) {
       this.name = name,

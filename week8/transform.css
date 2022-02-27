@@ -1,0 +1,103 @@
+body {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+h1 {
+    background-color: #227c9d;
+    margin: 0 auto 50px auto;
+    padding: 25px;
+    color: white;
+  }
+
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+div {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+span{
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #227c9d;
+    cursor: pointer;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+span#one:hover {
+    transform: translate(100px, 50px);
+    transition: transform 1s ease-in-out;
+}
+
+span#two:hover {
+    transform: scale(1.5, 0.5);
+    transition: all 1.2s ease 1s;
+}
+
+span#three:hover {
+    transform: rotate(45deg);
+    transition-duration: 0.5s;
+}
+
+span#four:hover {
+    transform: skew(25deg, 4deg);
+    transition: all 1.5s ease-out;
+}
+
+span#five:hover {
+    transform: rotate(45deg);
+    transform-origin: 10%;
+    transition-duration: 0.5s;
+
+}
+
+span#six {
+    animation: moveRight 1s ease 0.2s infinite;
+}
+
+span#seven {
+    animation: appearDisappear 1s ease 0.2s infinite;
+}
+
+@keyframes moveRight {
+    from {
+    transform: translateX(-50%);
+    }
+    to {
+    transform: translateX(50%);
+    }
+   }
+@keyframes appearDisappear {
+    0%, 100% {
+    opacity: 0;
+    }
+    20%, 80% {
+    opacity: 1;
+    }
+}
+
+@keyframes bgMove {
+    100% {
+    background-position: 120% 0;
+    }
+}
+
+footer {
+    background-color: #227c9d;
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 15px;
+    color: white;
+  }
