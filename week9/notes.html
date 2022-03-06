@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 9</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      font-size: 16px;
+    }
+
+    h1 {
+      background-color: #227c9d;
+      margin: 0 auto;
+      padding: 25px;
+      color: white;
+    }
+
+    ul,
+    p {
+      width: 70%;
+      margin-left: 50px;
+    }
+
+    ul li,
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.3rem;
+    }
+
+    h2 {
+      color: #227c9d;
+      margin-left: 50px;
+      margin-top: 50px;
+    }
+
+    h3,
+    h4 {
+      margin-left: 50px;
+    }
+
+
+    footer {
+      background-color: #227c9d;
+      text-align: center;
+      font-size: 1.3rem;
+      margin-top: 50px;
+      padding: 15px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>W08: Readings and Notes</h1>
+  <h2>Chapter 9: Window Object</h2>
+  <p>
+    The window object represents the browser window that contains a web page.
+  </p>
+
+  <h3>The Browser Object Model:</h3>
+  <p>
+    BOM for short is a collection of properties and methods that contain information about the browser and computer
+    screen.
+  </p>
+
+  <ul>
+    <li>
+      Going Global:
+      Global variables are actual properties of a global object. In a browser environment, the global object is the
+      window object.
+    </li>
+    <li>
+      Dialogs:
+      There are few types of dialogs like: alert(), confirm(), and prompt(). They are also window objects.
+
+    </li>
+  </ul>
+  <h3>Browser Information:</h3>
+  <p>
+    The window object has a number of properties and methods that provide information about the user’s browser.
+  </p>
+
+  <h4>Which Browser?</h4>
+  <p>
+    window.navigator.userAgent – This property will return information about the browser and operating system being
+    used.
+  </p>
+  <h4>Location, Location, Location</h4>
+  <p>
+    The window.location property is an object that contains information about the URL of the current page.
+  </p>
+  <ul>
+    <li>window.location.href: return the full URL as a string</li>
+    <li>window.location.protocol: return the protocol used (such as https, pop2, ftp etc.)</li>
+    <li>window.location.host: returns the domain of the current URL and the port number</li>
+    <li>window.location.port: returns the port number</li>
+    <li>window.location.pathname: returns a string of the path that follows the domain</li>
+    <li>window.location.search: returns a string that starts with a “?” followed by the query string parameters</li>
+    <li>window.location.hash: returns a string that starts with a “#” followed by the fragment identifiers</li>
+    <li>window.location.origin: returns a string that shows the protocol and domain where the current page originated
+      from</li>
+  </ul>
+
+  <p>Some methods of the window.location object:</p>
+  <ul>
+    <li>window.location.reload(): Force a reload of the current page.</li>
+    <li>window.location.assign(): Load another resource from a URL provided as a parameter</li>
+    <li>window.location.replace(): Same as the window.location.assign() method, except that the current page will not be
+      stored in the session history, so the user will be unable to navigate back to it using the back button.
+    </li>
+  </ul>
+
+  <h3>The Browser History</h3>
+  <p>The window.history property can be used to access information about any previously visited pages in the current
+    browser session.
+  </p>
+  <ul>
+    <li>window.history.lenght: shows how many pages have been visited before arriving at the current page.</li>
+    <li>window.history.go(): used to go to a specific page, where 0 is the current page</li>
+    <li>window.history.forward(): navigate forwards by one page.</li>
+    <li>window.history.back(): backwards by one page respectively</li>
+  </ul>
+
+  <h3>Controlling Windows
+  </h3>
+  <ul>
+    <li>window.open(): open a new window. It takes URL as a parameter with few arguments.
+      Example: window.open(‘https://sitepoint.com’,‘SitePoint’,‘width=400, ↵height=400,resizable=yes’)</li>
+    <li>window.close(): In the other hand, this method is used to close a window</li>
+    <li>window.move(): move a window depending on the argument given (X, Y)</li>
+    <li>window.resizeTo(): Resize window’s dimensions by taking two parameters that specify the width and height</li>
+  </ul>
+
+  <h3> Screen Information
+  </h3>
+  <p> The window.screen object contains information about the screen that the browser is displayed on.
+  </p>
+  <ul>
+    <li>window.screen.height</li>
+    <li>window.screen.width</li>
+    <li>window.screen.availWidth</li>
+    <li>window.screen.availHeight</li>
+    <li>window.screen.colorDepth: used to find the color bit depth of the user’s monitor</li>
+
+  </ul>
+
+  <h3> The Document Object
+  </h3>
+  <p>Each window object contains a document object. This object has properties and methods that deal with the page that
+    has been loaded into the window.</p>
+
+  <ul>
+    <li>document.write(): writes a string of text to the page.
+      This is an archaic method of writing text to the document and should be avoided.
+    <li>document.cookie: create a cookie</li>
+  </ul>
+
+  <h3> Cookies:
+  </h3>
+  <p>Cookies are small files that are saved locally on a user’s computer. They are also limited to storing up to 4KB of
+    data, although 20 cookies are allowed per domain, which can add up to quite a lot of data.
+    Their use for data storage is starting to be replaced in many cases by the new HTML5 localStorage API as it allows
+    more data to be stored
+    The method used to deal with cookies is document.cookie</p>
+  <h3>Timing Functions</h3>
+  <p>The window object provides some useful methods for scheduling the execution of a function and for repeatedly
+    executing functions at regular intervals
+  </p>
+  <ul>
+    <li>window.setTimeout() method accepts a callback to a function as its first parameter and a number of milliseconds
+      as its second parameter</li>
+    <li>window.clearTimeout()</li>
+    <li>window.setInterval() method works in a similar way to setTimeout except that it will continue to invoke the
+      callback function after every given number of milliseconds.</li>
+    <li>window.clearInterval()</li>
+  </ul>
+
+  <h3>Animation</h3>
+  <p>The setTimeOut() and setInterval() methods can be used to animate elements on a web page. But after, a new method
+    has been developed. </p>
+  <ul>
+    <li>window.requestAnimationFrame(): this works in much the same way as the window.setInterval() method, although it
+      has a number of improvements to optimize its performance.</li>
+    <li>window.cancelAnimationFrame()</li>
+  </ul>
+
+  <h2>Chapter 14: HTML5 APIs</h2>
+  <p>HTML5 is the latest iteration of the Hypertext Markup Language used to create web pages. This version goes beyond
+    the actual markup language, however, and brings together a number of related technologies such as CSS and
+    JavaScript.
+  </p>
+  <h3>The data- Attribute:</h3>
+  <p>It is a way of embedding data in a web page using custom attributes that are ignored by the browser. They’re also
+    private to a page, so shouldn’t be used by an external service: their sole purpose is to be used by a JavaScript
+    program.
+  </p>
+  <p>The names of these attributes can be decided by the developer, but they must use the following format: </p>
+
+  <ul>
+    <li>start with data </li>
+    <li>contain only lowercase letters </li>
+    <li>include an optional string value </li>
+    </li>
+  </ul>
+
+  <p>If a data- attribute’s name contains hyphens, they are replaced with camel-case notation, so data-max-length would
+    be accessed using maxLength.
+  </p>
+  <p>Data attributes provide a convenient way of adding data directly into the HTML markup, enabling a richer user
+    experience.</p>
+
+  <h3> HTML5 APIs </h3>
+  <p>The HTML5 specification contains a number of APIs that help to gain access to the hardware, such as cameras,
+    batteries, geolocation, and the graphics card. Hardware evolves quickly and APIs are frequently introduced to give
+    developers access and control new features that appear in the latest devices.
+    Due to the ever-changing nature of most APIs, it is still best practice to use object-detection tests before using
+    any of the API methods.</p>
+
+  <h4>HTML5 Web Storage</h4>
+  <p>The Web Storage API provides a key-value store on the client’s computer that is similar to using cookies but has
+    fewer restrictions, more storage capacity, and is generally easier to use.
+  </p>
+  <p>The Web Storage API has some crucial differences with cookies: </p>
+  <ul>
+    <li>information stored is not shared with the server on every request </li>
+    <li>information is available in multiple windows of the browser (but only if the domain is the same) </li>
+    <li>storage capacity limit is much larger than the 4KB limit for cookies</li>
+  </ul>
+
+  <p>If a browser supports the Web Storage API the window object will have a property called localStorage, which is a
+    native object with a number of properties and methods used to store data.
+  </p>
+  <p>Every time a value is saved to local storage, a storage event is fired. The event object sent by the event listener
+    to the callback has a number of properties that provide information about the updated item:
+  </p>
+  <ul>
+    <li>key tells us the key of the item that changed</li>
+    <li>newValue tells us the new value to which it has been changed </li>
+    <li>oldValue tells us the previous value before it was changed </li>
+    <li>storageArea tells us if it is stored in local or session storage</li>
+  </ul>
+  <h4>Geolocation
+  </h4>
+  <p>The Geolocation API is used to obtain the geographical position of the device.</p>
+  <p>This has a method. Here are some example</p>
+  <ul>
+    <li>getCurrentPosition() that will return a position object to a specified function, called youAreHere() </li>
+    <li>clearWatch() method can be used to stop the callback being called, using the ID of the watch as an argument</li>
+  </ul>
+  <p> There are many other properties: </p>
+  <ul>
+    <li>position.speed: returns the ground speed of the device in meters per second</li>
+    <li>position.altitude: returns an estimate of the device’s altitude in meters above the WGS84 ellipsoid, which is a
+      standard measurement for the center of the Earth</li>
+    <li>position.headin: returns the direction the device is moving in as a bearing</li>
+    <li>position.timestamp property returns the time that the position information was recorded</li>
+    <li>position.accuracy property returns the accuracy of the latitude and longitude properties in meters</li>
+  </ul>
+  <h4>Web Workers</h4>
+  <p>We saw in earlier chapters that JavaScript is a single-threaded language, meaning that only one process can run at
+    one time. Web workers allow processes to be run in the background, adding support for concurrency in JavaScript.
+  </p>
+  <p>To get started, we need to use the Worker() constructor function to create a new worker
+  </p>
+  <p>Web workers use the concept of messages to communicate back and forth between the main script and worker script.
+    (use of the method postMessage())
+  </p>
+  <p>When a worker has completed its task, it can be stopped using the terminate() method or close () inside the script
+  </p>
+
+  <h4>Shared Web Workers
+  </h4>
+  <p>The examples we have seen so far are known as dedicated web workers. These are linked to the script that loaded the
+    worker and are unable to be used by another script. You can also create shared web workers that allow lots of
+    different scripts on the same domain to access the same worker object.
+  </p>
+  <p>They are a useful feature that help to keep sites responsive, even when complicated operations are being carried
+    out.
+  </p>
+  <h4>Multimedia</h4>
+  <p>Before HTML5 it was notoriously difficult to display audio and video in browsers, and plugins such as Flash often
+    had to be used. HTML5 introduced the and tags used to insert audio and video clips into a web page. It also
+    introduced a Media API for controlling the playback of the clips using JavaScript.
+  </p>
+  <p>Audio and video elements have a number of properties and methods to control the playback of the clip.
+  </p>
+  <ul>
+    <li>play() method will start the clip playing from its current position</li>
+    <li>pause() method will pause the clip at its current position</li>
+    <li>volume property is a number that can be used to set the audio volume </li>
+    <li>muted property is a Boolean value that can be used to mute the audio</li>
+    <li>currentTime property is a number value that can be used to jump to another part of the clip</li>
+    <li>playbackRate property is used to fast-forward or rewind the clip by changing its value. A value of 1 is playback
+      at normal speed</li>
+    <li>loop property is a Boolean value that can be set to true to make the clip repeat in a loop</li>
+    <li>duration property can be used to see how long the clip lasts</li>
+  </ul>
+  <h4>Other APIs </h4>
+  <p>The list of APIs is constantly growing, and include APIs for accessing a device’s camera, using WebSockets for
+    multiple simultaneous connections, uploading files, accessing the battery status, handling push notifications,
+    building drag and drop functionality, creating 3D effects with WebGL, and many more! A comprehensive list of HTML5
+    APIs can be found at the Mozilla Developer Network.
+  </p>
+  <h4>Drawing with Canvas
+  </h4>
+  <p>The canvas element was introduced to allow graphics to be drawn onto a web page in real time using JavaScript.
+  </p>
+  <p>A canvas element is a rectangular element on the web page. It has a coordinate system that starts at (0,0) in the
+    top-left corner. To add a canvas element to a page, the tag is used specifying a height and width.
+  </p>
+  <p>Method and properties:
+  </p>
+  <ul>
+    <li>getContext() method is used to access the context</li>
+    <li>The fill and stroke colors can be changed by assigning a CSS color to the fillStyle and strokeStyle properties
+      respectively</li>
+    <li>fillRect() method is used to draw a filled-in rectangle.</li>
+    <li>strokeRect() method works in the same way, but produces a rectangle that is not filled in</li>
+    <li>moveTo() and lineTo() is used to draw</li>
+    <li>stroke(): nothing will be displayed on the screen unless this method is called</li>
+    <li>arc() method is used to draw an arc of a given radius from a particular point</li>
+    <li>fillText() method is used to write text onto the canvas</li>
+  </ul>
+
+  <h4>Shims and Polyfills
+  </h4>
+  <p>HTML5 APIs progress at a rapid rate―new APIs are constantly being introduced and existing APIs often change. Modern
+    browsers are very quick to update and implement many of the changes, but you can’t always guarantee that users will
+    have the most up-to date browser. This is where a shim or a polyfill comes in handy. These are libraries of code
+    that allow you to use the APIs as usual; they then fill in the necessary code that not provided natively by the
+    user’s browser.
+  </p>
+  <ul>
+    <li>Shim: is a piece of code that adds some missing functionality to a browser, although the implementation method
+      may be differ slightly from the standard API. </li>
+    <li>polyfill is a shim that achieves the same functionality while also using the API commands that would be used if
+      the feature was supported natively.
+    </li>
+  </ul>
+  <footer>&copy;Copyright | Tommy Sylver</footer>
+</body>
+
+</html>

@@ -64,6 +64,14 @@ const links = [
     {
       label: "Week 08 Team Activity: Stars Wars Character",
       url: "teamweek8/index.html",
+    },
+    {
+      label: "Week 09 Notes",
+      url: "week9/notes.html"
+    },
+    {
+      label: "Week 09 Team Activity: JS Drum Kit",
+      url: "teamweek9/index.html"
     }
   ]
 
