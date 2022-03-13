@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 10</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      font-size: 16px;
+    }
+
+    h1 {
+      background-color: #227c9d;
+      margin: 0 auto;
+      padding: 25px;
+      color: white;
+    }
+
+    ul,
+    p {
+      width: 70%;
+      margin-left: 50px;
+    }
+
+    ul li,
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.3rem;
+    }
+
+    h2 {
+      color: #227c9d;
+      margin-left: 50px;
+      margin-top: 50px;
+    }
+
+    h3,
+    h4 {
+      margin-left: 50px;
+    }
+
+    .piece-of-code {
+      background-color: #ccc;
+      width: 90%;
+      margin: 20px auto;
+      padding: 10px;
+      
+    }
+    .piece-of-code p {
+      font-size: 14px;
+    }
+
+
+    footer {
+      background-color: #227c9d;
+      text-align: center;
+      font-size: 1.3rem;
+      margin-top: 50px;
+      padding: 15px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>W10: Readings and Notes</h1>
+  <h2>Client-side form validation</h2>
+  <p>
+    It is important to ensure all required form controls are filled out, in the correct format. This is called client-side form validation. It offers a good user experience; by catching invalid data on the client-side, the user can fix it straight away. 
+  </p>
+
+  <h3>What is a form validation?</h3>
+  <p>
+    When you enter data, the browser and/or the web server will check to see that the data is in the correct format and within the constraints set by the application. Based on the input, It returns the correct error message.
+  </p>
+
+  <h3>Different types of client-side validation</h3>
+  <p>  There are two different types that you'll encounter on the web:
+  </p>
+
+
+  <ul>
+    <li>
+      Built-in form validation uses HTML5 form validation features. This validation generally doesn't require much JavaScript. Built-in form validation has better performance than JavaScript, but it is not as customizable as JavaScript validation.
+
+    </li>
+    <li>
+      JavaScript validation is coded using JavaScript. This validation is completely customizable, but you need to create it all (or use a library).
+
+    </li>
+  </ul>
+
+  <h3>Built-in form validation </h3>
+  <p>
+This is done by using validation attributes on form elements.  </p>
+
+  <ul>
+    <li>required</li>
+    <li>minlength and maxlength</li>
+    <li>min and max</li>
+    <li>type</li>
+    <li>pattern</li>
+  </ul>
+
+  <h3>Using JavaScript </h3>
+  <p>You must use JavaScript if you want to take control over the look and feel of native error messages or to deal with legacy browsers that do not support HTML's built-in form validation. 
+  </p>
+  <p>The Constraint Validation API</p>
+  <p>Most browsers support the Constraint Validation API, which consists of a set of methods and properties available on the following form element DOM interfaces:</p>
+  <ul>
+    <li>HTMLButtonElement (represents a button element)</li>
+      <li>HTMLFieldSetElement (represents a fieldset element)</li>
+      <li>HTMLOutputElement (represents an output element)</li>
+      <li>HTMLSelectElement (represents a select element)</li>
+      <li>HTMLTextAreaElement (represents a textarea element)</li>
+  </ul>
+
+  <p>A list of properties available: </p>
+  <ul>
+    <li>validationMessage: Returns a localized message describing the validation constraints that the control doesn't satisfy (if any). 
+    </li>
+    <li>validity: Returns a ValidityState object that contains several properties describing the validity state of the element</li>
+    <li>willValidate: Returns true if the element will be validated when the form is submitted; false otherwise.
+    </li>
+  </ul>
+<p>The error message is displayed in various way depending on the browser. Customizing these error messages is one of the most common use cases of the constraint validation API. </p>
+  <h3> Screen Information
+  </h3>
+
+  <h3>Validating forms without a built-in API</h3>
+  <p>In some cases, such as legacy browser support or custom controls, you won't be able to or won't want to use the Constraint Validation API. You're still able to use JavaScript to validate your form, but you'll just have to write your own.</p>
+  </p>
+  <p>Good question to ask while creating validation form</p>
+  <ul>
+    <li>What kind of validation should I perform?</li>
+    <li>What should I do if the form doesn't validate?</li>
+    <li>How can I help the user to correct invalid data?</li>
+  </ul>
+
+  <h2>Using the Fetch API</h2>
+  <p>The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses.
+    Previously done with XMLHttpRequest, Fetch provides a better alternative can be easily used by other technologies such as Service Workers
+    </p>
+  <h3> Supplying request options
+  </h3>
+  <p>The fetch() method can optionally accept a second parameter, an init object that allows you to control a number of different settings.
+    Example:
+    </p>
+  
+  <div class="piece-of-code">
+    <code >
+      <p>const response = await fetch(url, {</p>
+      <p>method: 'POST', // *GET, POST, PUT, DELETE, etc.</p>
+      <p>mode: 'cors', // no-cors, *cors, same-origin
+      </p>
+      <p>cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached</p>
+      <p>credentials: 'same-origin', // include, *same-origin, omit</p>
+      <p>headers: {</p>
+      <p>'Content-Type': 'application/json'</p>
+      <p>// 'Content-Type': 'application/x-www-form-urlencoded'},</p>
+      <p>redirect: 'follow', // manual, *follow, error</p>
+      <p>  referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      </p>
+      <p>body: JSON.stringify(data) // body data type must match "Content-Type" header
+      </p>
+      <p>});  </p>
+    </code>
+  </div>
+
+
+  <p>credentials: 'include' To cause browsers to send a request with credentials included on both same-origin and cross-origin calls
+  </p>
+  <p>credentials: ‘same-origin’ send credentials if the request URL is on the same origin as the calling script,
+  </p>
+  <p>credentials: ‘omit’ ensure browsers don't include credentials in the request
+  </p>
+
+  <h3>Supplying your own request object
+  </h3>
+  <p>Instead of passing a path to the resource you want to request into the fetch() call, you can create a request object using the Request() constructor, and pass that in as a fetch() method argument:</p>
+
+  <div class="piece-of-code">
+<code><p>    const myHeaders = new Headers();
+</p>
+<p>const myRequest = new Request('flowers.jpg', {
+</p>  
+<p>method: 'GET',</p>
+<p>  headers: myHeaders,
+</p>
+<p>mode: 'cors',</p>
+  <p>cache: 'default',</p>
+<p>});</p>
+
+<p>fetch(myRequest)</p>
+  <p>.then(response => response.blob())</p>
+  <p>.then(myBlob => {</p>
+    
+    <p>myImage.src = URL.createObjectURL(myBlob);</p>
+  
+    <p>});</p>
+</code>
+  </div>
+
+  <p>Note: Request() accepts exactly the same parameters as the fetch() method.</p>
+  
+  <h3>Headers</h3>
+<p>It allows us to create our own headers object via the Headers() constructor. A headers object is a simple multi-map of names to values
+</p>
+<p>  A good use case for headers is checking whether the content type is correct before you process it further
+</p>
+<h3>Guard</h3>:
+
+<p>Since headers can be sent in requests and received in responses, and have various limitations about what information can and should be mutable, headers' objects have a guard property. This is not exposed to the Web, but it affects which mutation operations are allowed on the headers object.
+</p>
+<p>Possible guard values are:
+</p>
+<ul>
+  <li>none: default</li>
+    <li>request: guard for a headers object obtained from a request (Request.headers).</li>
+    <li>request-no-cors: guard for a headers object obtained from a request created with Request.mode no-cors.</li>
+    <li>response: guard for a headers object obtained from a response (Response.headers).</li>
+    <li>immutable: guard that renders a headers object read-only; mostly used for ServiceWorkers.</li>
+</ul>
+
+<h3>Response objects
+</h3>
+<p>Response instances are returned when fetch() promises are resolved. The Response() constructor takes two optional arguments — a body for the response, and an init object 
+</p>
+<p>Most common properties:
+</p>
+<ul>
+  <li>Response.status</li>
+    <li>Response.statusText </li>
+    <li>Response.ok .</li>
+</ul>
+<h3>Body</h3>
+<p>Both requests and responses may contain body data. A body is an instance of any of the following types:
+</p>
+
+<ul>
+  <li>ArrayBuffer</li>
+  <li>ArrayBufferView (Uint8Array and friends)</li>
+  <li>Blob/File</li>
+  <li>string</li>
+  <li>URLSearchParams</li>
+  <li>FormData</li>
+</ul>
+
+<p>The Request and Response interfaces share the following methods to extract a body. These all return a promise that is eventually resolved with the actual content.
+</p>
+<ul>
+  <li>Request.arrayBuffer() / Response.arrayBuffer()</li>
+  <li>Request.blob() / Response.blob()</li>
+  <li>Request.formData() / Response.formData()</li>
+  <li>Request.json() / Response.json()</li>
+  <li>Request.text() / Response.text()</li>
+</ul>
+  <footer>&copy;Copyright | Tommy Sylver</footer>
+</body>
+
+</html>
