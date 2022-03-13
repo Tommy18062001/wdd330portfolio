@@ -72,6 +72,10 @@ const links = [
     {
       label: "Week 09 Team Activity: JS Drum Kit",
       url: "teamweek9/index.html"
+    },
+    {
+      label: "Week 10 Team Activity: Quake List",
+      url: "teamweek9/index.html"
     }
   ]
 
